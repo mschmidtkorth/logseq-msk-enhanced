@@ -16,4 +16,4 @@
 
 - Based on [logseq dark hpx](https://github.com/cannibalox/logseq-dark-hpx) - thank you, [@cannibalox](https://github.com/cannibalox)
 - Thank you [@dracula](https://github.com/dracula/logseq/) for priorities
-- Thank you [@pengx17](https://github.com/pengx17/logseq-dev-theme) for inspiration
+- Thank you [@pengx17](https://github.com/pengx17/logseq-dev-theme) for inspiration and highlight of block path
