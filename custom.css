@@ -18,14 +18,16 @@
 
 .white-theme,
 html[data-theme=light] {
+	/* color palette: f4f1de/e07a5f/3d405b/81b29a/f2cc8f */
 	--ls-primary-background-color: white;
 	--ls-secondary-background-color: rgb(248, 248, 248);
 	--ls-tertiary-background-color: rgb(244, 244, 244);
 	--ls-quaternary-background-color: #e5efa0;
 	--ls-table-tr-even-background-color: #fff;
-	--ls-active-primary-color: #029cf8;
+	--ls-active-primary-color: var(--orange);
 	--ls-active-secondary-color: #08c8ba;
 	--ls-block-properties-background-color: #ff7d7d;
+	--ls-page-properties-background-color: #ff7d7d;
 	--ls-search-background-color: #e4e4e4;
 	--ls-border-color: #98cdef;
 	--ls-guideline-color: var(--ls-border-color);
@@ -34,14 +36,14 @@ html[data-theme=light] {
 	--ls-secondary-text-color: #161e2e;
 	--ls-title-text-color: #0b8fe6;
 	--ls-link-text-color: var(--ls-active-primary-color);
-	--ls-link-text-hover-color: #8d30ff;
+	--ls-link-text-hover-color: #c65804;
 	--ls-link-ref-text-color: var(--ls-link-text-color);
 	--ls-link-ref-text-hover-color: var(--ls-link-text-hover-color);
 	--ls-tag-text-color: #ff0006;
 	--ls-tag-text-hover-color: var(--ls-link-text-hover-color);
 	--ls-slide-background-color: #fff;
 	--ls-block-bullet-border-color: #00b3ff;
-	--ls-block-bullet-color: #394b59;
+	--ls-block-bullet-color: #3d405b;
 	--ls-block-highlight-color: #c0e6fd;
 	--ls-selection-background-color: #e4f2ff;
 	--ls-page-checkbox-color: var(--ls-active-primary-color);
@@ -55,7 +57,7 @@ html[data-theme=light] {
 	--ls-scrollbar-background-color: rgba(0, 0, 0, 0.05);
 	--ls-scrollbar-thumb-hover-color: rgba(255, 59, 59, .2);
 	--ls-head-text-color: var(--ls-link-text-color);
-	--ls-icon-color: #1b85ff;
+	--ls-icon-color: var(--orange);
 	--ls-search-icon-color: var(--ls-icon-color);
 	--ls-a-chosen-bg: #f4f5f7;
 	--ls-right-sidebar-code-bg-color: var(--ls-secondary-background-color);
@@ -72,6 +74,46 @@ html[data-theme=light] {
 	--tagpills-border: rgba(37, 79, 99, 0);
 	--tagpills-border-radius: 4px;
 	--logo-fill: #007bff;
+
+	--marker-switch-bgcolor: #e07b5f4d;
+	--marker-switch-color: #ee4325;
+	--marker-switch-opa: 0.7;
+	--datepicker-active-bgcolor: #650707;
+	--datepicker-active-bordercolor: #fff;
+	--datepicker-active-bordersize: 0px;
+	--datepicker-active-color: white;
+	/* --datepicker-available-hovercolor: #F56A02; */
+	--datepicker-available-hoverbgcolor: #192731;
+	--text-accent: #789eb0;
+	--text-accentLight: #789eb038;
+	--text-highlight: #f64933;
+	--inverted-text: #81b29a;
+	--highlight-light: #81b29a;
+	--ls-block-ref-link-text-color: #74ced8;
+	--admo-text-important: #fa4320;
+	--admo-bg-important: #171717;
+	--background: #282a36;
+	--light-background: #343746;
+	--lighter-background: #424450;
+	--dark-background: #21222c;
+	--darker-background: #191a21;
+	--foreground: #f8f8f2;
+	--current-line: #44475a;
+	--comment: #777;
+	--white: #fff;
+	--red: #f55;
+	--orange: #e07a5f;
+	--yellow: #eb9f3d;
+	--yellowLight: #e9ad5f3b;
+	--green: #8fd876;
+	--purple: #519fea;
+	--purple-hover: #bf93f988;
+	--cyan: #71c0e4;
+	--cyan-hover: #8be9fd88;
+	--pink: #d4d4d4;
+	--pink-hover: #ff79c688;
+	--path: var(--orange);
+	--selection: #f2cc8f;
 }
 
 .dark-theme,
@@ -81,6 +123,7 @@ html[data-theme=dark] {
 	--ls-tertiary-background-color: #08404f;
 	--ls-quartery-background-color: rgb(38, 39, 41);
 	--ls-block-properties-background-color: #111415c2;
+	--ls-page-properties-background-color: #111415c2;
 	--ls-search-background-color: #000000;
 	--ls-border-color: #323232;
 	--ls-menu-hover-color: #1c3444;
@@ -158,11 +201,17 @@ html[data-theme=dark] {
 	--pink: #d4d4d4;
 	--pink-hover: #ff79c688;
 	--logo-fill: #F56A02;
+	--path: #FFF;
+	--selection: #8be9fd88;
 }
 
 :root {
 	/* --ls-main-content-max-width: 100vw; /* Always wide width */
 	--ls-main-content-max-width: 800px;
+}
+
+::selection {
+	background: var(--selection)
 }
 
 
@@ -178,10 +227,10 @@ html {
 	font-family: Montserrat, Barlow, Inter, sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !important;
 }
 
-html .white-theme {
+/* html .white-theme {
 	font-family: barlow;
 	font-size: 15px !important;
-}
+} */
 
 
 /*==================================================*/
@@ -374,6 +423,14 @@ a.menu-link:hover {
 	opacity: 0.8;
 }
 
+.white-theme a.menu-link {
+	background-color: var(--ls-secondary-background-color);
+}
+
+.white-theme a.menu-link:hover {
+	background-color: #f2cc8f;
+}
+
 a.chosen {
 	background: var(--ls-a-chosen-bg);
 	font-weight: bold;
@@ -406,7 +463,14 @@ mark {
 }
 
 mark a {
+	color: #004256 !important;
+	/* color: var(--ls-tertiary-background-color) !important; */
+}
+
+mark a:hover {
+	background: var(--yellowLight);
 	color: #FFF !important;
+	/* color: var(--ls-tertiary-background-color) !important; */
 }
 
 #ui__ac mark {
@@ -716,14 +780,11 @@ mark a {
 
 .cm-s-default .CodeMirror-line::selection,
 .cm-s-default .CodeMirror-line>span::selection,
-.cm-s-default .CodeMirror-line>span>span::selection {
-	background: rgba(255, 255, 255, 0.1);
-}
-
+.cm-s-default .CodeMirror-line>span>span::selection,
 .cm-s-default .CodeMirror-line::-moz-selection,
 .cm-s-default .CodeMirror-line>span::-moz-selection,
 .cm-s-default .CodeMirror-line>span>span::-moz-selection {
-	background: rgba(255, 255, 255, 0.1);
+	background: #FFF;
 }
 
 .cm-s-default span.cm-comment {
@@ -846,17 +907,21 @@ iframe {
 /*==================================================*/
 
 .dark-theme tr:nth-child(2n),
-.dark-theme tr:nth-child(2n+1) {
+.dark-theme tr:nth-child(2n+1),
+.light-theme tr:nth-child(2n),
+.light-theme tr:nth-child(2n+1) {
 	background: var(--ls-primary-background-color);
 	border-bottom: 1px solid var(--ls-border-color);
 }
 
-.dark-theme tr:nth-child(2n) {
+.dark-theme tr:nth-child(2n),
+.light-theme tr:nth-child(2n) {
 	background: var(--ls-tertiary-background-color);
 	border-bottom: 1px solid var(--ls-border-color);
 }
 
-.dark-theme th {
+.dark-theme th,
+.light-theme th {
 	color: var(--orange);
 	background-color: var(--ls-secondary-background-color);
 	border-bottom: 1px solid var(--ls-border-color);
@@ -968,6 +1033,13 @@ iframe {
 }
 
 
+/* Page breaks */
+hr {
+	/* margin: 2rem 0; */
+	margin: 0rem 0;
+	border-color: var(--ls-foreground, #ccc);
+}
+
 /*==================================================*/
 
 
@@ -982,6 +1054,7 @@ h3 {
 	background-color: var(--ls-secondary-background-color);
 	padding-left: .5em;
 	border-radius: 3px;
+	border: none !important;
 	/* border-bottom-width: 5px;
 	border-color: var(--ls-secondary-background-color); */
 }
@@ -1238,7 +1311,8 @@ a.tag:hover {
 }
 
 a.tag[href*="important"],
-a.tag[href*="achievements"] {
+a.tag[href*="achievements"],
+a.tag[href*="mine"] {
 	/* color: #fd3434; */
 	background-color: var(--red);
 }
@@ -1347,7 +1421,9 @@ a.tag[href*="cloth"]:after {
 /*==================================================*/
 
 .dark-theme .datepicker td.active,
-.dark-theme .datepicker td.active:hover {
+.dark-theme .datepicker td.active:hover,
+.light-theme .datepicker td.active,
+.light-theme .datepicker td.active:hover {
 	background-color: var(--datepicker-active-bgcolor);
 	border: var(--datepicker-active-bordersize) solid;
 	border-color: var(--datepicker-active-bordercolor);
@@ -1355,7 +1431,9 @@ a.tag[href*="cloth"]:after {
 }
 
 .dark-theme .datepicker td.available:hover,
-.dark-theme .datepicker th.available:hover {
+.dark-theme .datepicker th.available:hover,
+.light-theme .datepicker td.available:hover,
+.light-theme .datepicker th.available:hover {
 	background: var(--datepicker-available-hoverbgcolor);
 	color: var(--datepicker-available-hovercolor);
 }
@@ -1487,7 +1565,8 @@ a.external-link:after {
 
 .block-ref {
 	color: var(--ls-link-ref-text-color);
-	padding-bottom: 0px;
+	/* padding-bottom: 0px; */
+	padding: 0;
 	border-bottom: -0px solid;
 	border-bottom-color: var(--ls-link-ref-text-color);
 	cursor: alias;
@@ -1591,6 +1670,11 @@ content .admonitionblock {
 	color: var(--ls-secondary-text-color);
 }
 
+/* Footnotes */
+
+.footdef {
+	font-size: .5em !important;
+}
 
 /*==================================================*/
 
@@ -1903,81 +1987,99 @@ html[data-theme="dark"] #app-container::before {
 
 
 /* Outline current block path - thanks to https://github.com/pengx17/logseq-dev-theme/commit/e59450dab4f2d3a582a80a26fcd513ffe5e816c1 */
-
-
-/* .ls-block .bullet {
-    background-color: white;
-    box-shadow: 0 0 0 1px white;
-} */
-
-
-/* .ls-block:not(:focus-within) .bullet {
-    background-color: white;
-    box-shadow: none;
-    opacity: 0.3;
-    transform: scale(1);
-} */
+/* TODO: Get latest version */
 
 .ls-block>div>div.items-center {
+	height: 26px !important;
 	position: relative;
 }
 
 div.items-center::before,
 div.items-center::after,
 .ls-block::before,
-.ls-block::after {
-	transition: background-color 0.2s;
+.ls-block::after,
+.block-content-wrapper::before {
+	pointer-events: none;
 }
 
-
-/* .doc-mode div.items-center::before,
-.doc-mode div.items-center::after,
-.doc-mode .ls-block::before,
-.doc-mode .ls-block::after {
-    display: none;
-} */
-
-.ls-block:not([level="1"]):focus-within>div>div.items-center::before {
+.ls-block>div>div.items-center::before {
 	content: "";
 	height: 100%;
 	left: -2px;
 	right: 6px;
-	top: -50%;
+	top: calc(-50% + 1px);
 	position: absolute;
-	border-left: 2px solid white;
-	border-bottom: 2px solid white;
-	border-bottom-left-radius: 6px;
+	border-left: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	border-bottom-left-radius: 10px;
 }
 
-.ls-block:not([level="1"]):focus-within>div>div.items-center::after {
+.blocks-container>.ls-block>div>div.items-center::before,
+.blocks-container>.ls-block:focus-within>div>div.items-center::after,
+.blocks-container>.block-children:focus-within>.ls-block::before,
+.blocks-container>#lazy-blocks>.ls-block>div>div.items-center::before,
+.blocks-container>#lazy-blocks>.ls-block:focus-within>div>div.items-center::after,
+.blocks-container>#lazy-blocks>.block-children:focus-within>.ls-block::before {
+	display: none;
+}
+
+.ls-block:focus-within>div>div.items-center::before {
+	border-color: var(--path);
+}
+
+.ls-block>div>div.items-center::after {
 	content: "";
-	height: calc(100% - 4px);
-	width: 2px;
+	height: calc(100% - 10px);
 	top: -50%;
 	left: -2px;
 	position: absolute;
-	background-color: white;
+	border-left: 2px solid transparent;
 }
 
-.block-children:focus-within>.ls-block::before {
+.ls-block:focus-within>div>div.items-center::after {
+	border-color: var(--path);
+}
+
+.block-children>.ls-block::before {
 	content: "";
 	top: -10px;
 	bottom: 0;
-	width: 2px;
+	border-left: 2px solid transparent;
 	left: -2px;
 	position: absolute;
-	background-color: white;
 }
 
-
-/*
-.block-children:focus-within>.ls-block:focus-within::before {
-    background: transparent;
+.block-children:focus-within>.ls-block:not(:focus-within)::before {
+	border-color: var(--path);
 }
 
 .block-children:focus-within>.ls-block:focus-within~.ls-block::before {
-    background: transparent;
-} */
+	border-color: transparent;
+}
+
+.ls-block>div>.block-content-wrapper {
+	position: relative;
+}
+
+.ls-block>div>.block-content-wrapper::before {
+	content: "";
+	top: 1em;
+	bottom: 0;
+	left: -17px;
+	position: absolute;
+	border-left: 2px solid transparent;
+}
+
+.ls-block[haschild=true]:focus-within>div>.block-content-wrapper::before {
+	border-color: var(--path);
+}
+
+.doc-mode div.items-center::before,
+.doc-mode div.items-center::after,
+.doc-mode .ls-block::before,
+.doc-mode .ls-block::after {
+	display: none;
+}
 
 
 /* Progress bars, based on https://github.com/pengx17/logseq-dev-theme */
@@ -2068,3 +2170,26 @@ iv[data-refs-self*="kanban-w300"]>.block-children {
 div[data-refs-self*="kanban-w400"]>.block-children .block-content {
 	width: 380px;
 }
+
+/* ==== tooltip delay ==== */
+
+/* hide the container bg */
+/* .tippy-tooltip {
+	background-color: transparent;
+	transition-duration: 1s !important;
+}*/
+
+/* add delay*/
+/*.tippy-wrapper {
+	transition-delay: 100ms !important
+}
+
+.tippy-popper [x-arrow] {
+	transition-delay: 0ms !important
+}*/
+
+/* fast dissolve on leave */
+/*.tippy-popper .leave {
+	transition-duration: 0ms !important;
+	transition-delay: 0ms;
+} */
