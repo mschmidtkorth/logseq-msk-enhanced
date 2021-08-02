@@ -474,8 +474,9 @@ mark a:hover {
 }
 
 #ui__ac mark {
-	background: var(--highlight-light);
-	color: var(--text-highlight);
+	/* background: var(--highlight-light); */
+	background: var(--text-highlight);
+	/* color: var(--frontend); */
 	padding: 0 0px;
 	border-radius: 3px;
 	font-weight: 700;
