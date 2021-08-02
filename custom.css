@@ -113,6 +113,8 @@ html[data-theme=light] {
 	--pink-hover: #ff79c688;
 	--path: var(--orange);
 	--selection: #f2cc8f;
+	--selectionCode: var(--selection);
+	--code-current-line: #f2cc8f;
 	--text-code: var(--ls-primary-text-color);
 }
 
@@ -203,6 +205,9 @@ html[data-theme=dark] {
 	--logo-fill: #F56A02;
 	--path: #FFF;
 	--selection: #8be9fd88;
+	--selectionCode: var(--dark-background);
+	--code-current-line: var(--dark-background);
+	--text-code: var(--ls-primary-text-color);
 }
 
 :root {
@@ -777,21 +782,23 @@ mark a:hover {
 	color: var(--comment);
 }
 
-.cm-s-default .CodeMirror-selected {
-	background: rgba(255, 255, 255, 0.1);
-}
-
 .cm-s-default .CodeMirror-line {
 	box-shadow: none;
 }
 
-.cm-s-default .CodeMirror-line::selection,
-.cm-s-default .CodeMirror-line>span::selection,
-.cm-s-default .CodeMirror-line>span>span::selection,
-.cm-s-default .CodeMirror-line::-moz-selection,
-.cm-s-default .CodeMirror-line>span::-moz-selection,
-.cm-s-default .CodeMirror-line>span>span::-moz-selection {
+.CodeMirror-line::selection,
+.CodeMirror-line>span::selection,
+.CodeMirror-line>span>span::selection,
+.CodeMirror-line::-moz-selection,
+.CodeMirror-line>span::-moz-selection,
+.CodeMirror-line>span>span::-moz-selection {
 	background: #FFF;
+}
+
+.CodeMirror-selected {
+	/* background: rgba(255, 255, 255, 0.1); */
+	background: var(--selectionCode) !important;
+
 }
 
 .cm-s-default span.cm-comment {
@@ -860,8 +867,11 @@ mark a:hover {
 	color: var(--orange);
 }
 
-.cm-s-default .CodeMirror-activeline-background {
-	background: rgba(255, 255, 255, 0.1);
+.cm-s-default .CodeMirror-activeline-background,
+.cm-s-default .CodeMirror-activeline,
+.extensions__code .CodeMirror-activeline-background {
+	background: var(--code-current-line) !important;
+	/*  */
 }
 
 .cm-s-default .CodeMirror-matchingbracket {
