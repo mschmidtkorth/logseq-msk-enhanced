@@ -26,8 +26,8 @@ html[data-theme=light] {
 	--ls-table-tr-even-background-color: #fff;
 	--ls-active-primary-color: var(--orange);
 	--ls-active-secondary-color: #08c8ba;
-	--ls-block-properties-background-color: #ff7d7d;
-	--ls-page-properties-background-color: #ff7d7d;
+	--ls-block-properties-background-color: var(--ls-tertiary-background-color);
+	--ls-page-properties-background-color: var(--ls-tertiary-background-color);
 	--ls-search-background-color: #e4e4e4;
 	--ls-border-color: #98cdef;
 	--ls-guideline-color: var(--ls-border-color);
@@ -74,7 +74,6 @@ html[data-theme=light] {
 	--tagpills-border: rgba(37, 79, 99, 0);
 	--tagpills-border-radius: 4px;
 	--logo-fill: #007bff;
-
 	--marker-switch-bgcolor: #e07b5f4d;
 	--marker-switch-color: #ee4325;
 	--marker-switch-opa: 0.7;
@@ -114,6 +113,7 @@ html[data-theme=light] {
 	--pink-hover: #ff79c688;
 	--path: var(--orange);
 	--selection: #f2cc8f;
+	--text-code: var(--ls-primary-text-color);
 }
 
 .dark-theme,
@@ -672,7 +672,7 @@ mark a:hover {
 .CodeMirror {
 	font-family: Fira Code, Consolas, monospace;
 	font-size: 12px;
-	color: #efefef;
+	color: var(--text-code);
 	border-radius: 3px;
 }
 
