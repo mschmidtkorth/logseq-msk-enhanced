@@ -1,8 +1,8 @@
-## Logseq - Enhanced Dark Theme
+## Logseq - Enhanced Dark & Light Theme
 
 ### Theme Features
 
-- An enhanced version of the default Logseq theme (dark mode only)
+- An enhanced version of the default Logseq theme (focus on dark mode; light mode is also available but not fully done)
 - Highlight current block path (via [colorful indents](https://github.com/cannibalox/logseq-dark-hpx))
 - Easier identifiable headings
 - Identify external/page links (via `*` and `^`)
@@ -10,6 +10,8 @@
 - Easier to identify list item numbers
 
 ![Logseq - Enhanced Dark Theme](Logseq.png)
+
+![Logseq - Enhanced Light Theme](LogseqLight.png)
 
 ### Thanks
 
