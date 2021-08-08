@@ -450,6 +450,14 @@ a.chosen {
 	background-color: var(--ls-secondary-background-color);
 }
 
+.white-theme .ui__button {
+	background-color: var(--orange);
+}
+
+.dark-theme .ui__button {
+	background-color: var(--cyan-hover);
+}
+
 
 /*==================================================*/
 
@@ -1691,7 +1699,7 @@ content .admonitionblock {
 /* Footnotes */
 
 .footdef {
-	font-size: .5em !important;
+	font-size: .8em !important;
 }
 
 /*==================================================*/
