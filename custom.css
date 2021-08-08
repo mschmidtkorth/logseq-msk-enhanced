@@ -458,6 +458,13 @@ a.chosen {
 	background-color: var(--cyan-hover);
 }
 
+.white-theme span[role="checkbox"] {
+	background-color: var(--orange);
+}
+
+.dark-theme span[role="checkbox"] {
+	background-color: var(--cyan-hover);
+}
 
 /*==================================================*/
 
