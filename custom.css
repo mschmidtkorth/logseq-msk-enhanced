@@ -1779,9 +1779,9 @@ ol li p {
 
 /*==================text============================*/
 
-.text-gray-900 {
-	--tw-text-opacity: 1;
-	color: rgba(63, 230, 130, var(--tw-text-opacity));
+/* Notifications */
+.ui__notifications-content div {
+	color: var(--ls-primary-text-color);
 }
 
 
