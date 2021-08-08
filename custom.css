@@ -458,11 +458,12 @@ a.chosen {
 	background-color: var(--cyan-hover);
 }
 
-.white-theme span[role="checkbox"] {
+/* Note: aria-checked is always false, so we select by color of default theme */
+.white-theme span[role="checkbox"].bg-indigo-600 {
 	background-color: var(--orange);
 }
 
-.dark-theme span[role="checkbox"] {
+.dark-theme span[role="checkbox"].bg-indigo-600 {
 	background-color: var(--cyan-hover);
 }
 
