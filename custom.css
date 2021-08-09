@@ -22,7 +22,8 @@ html[data-theme=light] {
 	--ls-primary-background-color: white;
 	--ls-secondary-background-color: rgb(248, 248, 248);
 	--ls-tertiary-background-color: rgb(242, 242, 242);
-	--ls-quaternary-background-color: #e5efa0;
+	--ls-quaternary-background-color: #e07b5f20;
+	/*#f4f1de;*/
 	--ls-table-tr-even-background-color: #fff;
 	--ls-active-primary-color: var(--orange);
 	--ls-active-secondary-color: #08c8ba;
@@ -51,7 +52,8 @@ html[data-theme=light] {
 	--ls-page-blockquote-color: var(--ls-primary-text-color);
 	--ls-page-blockquote-bg-color: var(--ls-secondary-background-color);
 	--ls-page-blockquote-border-color: var(--ls-active-primary-color);
-	--ls-page-inline-code-bg-color: #f4f1de;
+	--ls-page-inline-code-bg-color: #e07b5f20;
+	/*#f4f1de;*/
 	--ls-page-inline-code-color: var(--orange);
 	--ls-scrollbar-foreground-color: rgba(253, 253, 253, .1);
 	--ls-scrollbar-background-color: rgba(0, 0, 0, 0.05);
