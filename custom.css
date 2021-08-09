@@ -1693,7 +1693,7 @@ a.external-link:after {
 	/*==================================================*/
 
 	.admonitionblock {
-		margin: 0.75rem 0 0 0;
+		margin: 0.5em 0 0.5em 0;
 		padding: 1rem 1rem;
 		background-color: var(--ls-tertiary-background-color);
 		border-radius: 3px;
@@ -1793,6 +1793,10 @@ a.external-link:after {
 		margin-top: 10px;
 	}
 
+	.block-body ul {
+		margin-bottom: 1em;
+	}
+
 	ul li::marker {
 		/* font-size: 10px; */
 	}
@@ -1803,6 +1807,10 @@ a.external-link:after {
 	ol {
 		list-style: none;
 		counter-reset: item;
+	}
+
+	.block-body ol {
+		margin-bottom: 1em;
 	}
 
 	ol li {
