@@ -112,6 +112,7 @@
 		--cyan: #71c0e4;
 		--cyan-hover: #8be9fd88;
 		--pink: #d4d4d4;
+		--gray: #a9a9a9;
 		--pink-hover: #ff79c688;
 		--path: var(--orange);
 		--selection: #f2cc8f;
@@ -205,6 +206,7 @@
 		--cyan-hover: #8be9fd88;
 		--pink: #d4d4d4;
 		--pink-hover: #ff79c688;
+		--gray: #a9a9a9;
 		--logo-fill: #F56A02;
 		--path: #FFF;
 		--selection: #8be9fd88;
@@ -1619,7 +1621,6 @@ a.external-link:after {
 		color: var(--ls-primary-text-color) !important;
 	}
 
-
 	/*==================================================*/
 
 
@@ -1757,6 +1758,7 @@ a.external-link:after {
 
 	.content .admonitionblock .admonition-icon svg.note {
 		color: var(--ls-secondary-text-color);
+		fill: var(--gray);
 	}
 
 	/* Footnotes */
