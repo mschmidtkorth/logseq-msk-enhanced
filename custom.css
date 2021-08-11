@@ -124,6 +124,7 @@ span .bullet-container {
 .white-theme,
 html[data-theme=light] {
 	/* color palette: f4f1de/e07a5f/3d405b/81b29a/f2cc8f/+white+dark black */
+	/* For sepia */
 	/* --ls-primary-background-color: #fff5e9;
 	--ls-secondary-background-color: #feeddb;
 	--ls-tertiary-background-color: #fee5c6; */
@@ -163,8 +164,8 @@ html[data-theme=light] {
 	--ls-page-inline-code-bg-color: #e07b5f20;
 	/*#f4f1de;*/
 	--ls-page-inline-code-color: var(--orange);
-	--ls-scrollbar-foreground-color: rgba(253, 253, 253, .1);
-	--ls-scrollbar-background-color: rgba(0, 0, 0, 0.05);
+	--ls-scrollbar-foreground-color: var(--pink);
+	--ls-scrollbar-background-color: var(--ls-tertiary-background-color);
 	--ls-scrollbar-thumb-hover-color: rgba(255, 59, 59, .2);
 	--ls-head-text-color: var(--ls-link-text-color);
 	--ls-icon-color: var(--orange);
