@@ -335,24 +335,65 @@ html[data-theme=dark] {
 	--ls-block-bullet-threading-width: 2px;
 	/* For threading extension */
 	--ls-block-bullet-active-color: var(--ls-block-bullet-color);
-
+	--ls-font-family: 'Basis Grotesque Pro';
 }
 
 ::selection {
 	background: var(--selection)
 }
 
+/* === Fonts === */
+/* @import url('https://fonts.googleapis.com/css?family=Proxima+Nova'); */
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat'); */
+/* Note: Order is important */
+@font-face {
+	font-family: "Basis Grotesque Pro";
+	src: url("http://db.onlinewebfonts.com/t/3ddd0e3d1a076e112b27d8d9b7e20200.eot");
+	src: url("http://db.onlinewebfonts.com/t/3ddd0e3d1a076e112b27d8d9b7e20200.eot?#iefix") format("embedded-opentype"),
+		url("http://db.onlinewebfonts.com/t/3ddd0e3d1a076e112b27d8d9b7e20200.woff2") format("woff2"),
+		url("http://db.onlinewebfonts.com/t/3ddd0e3d1a076e112b27d8d9b7e20200.woff") format("woff"),
+		url("http://db.onlinewebfonts.com/t/3ddd0e3d1a076e112b27d8d9b7e20200.ttf") format("truetype"),
+		url("http://db.onlinewebfonts.com/t/3ddd0e3d1a076e112b27d8d9b7e20200.svg#Basis Grotesque Pro") format("svg");
+}
 
-/*==================================================*/
+@font-face {
+	font-family: "Basis Grotesque Pro";
+	src: url("http://db.onlinewebfonts.com/t/98a34676ba814c4848424f733521ea58.eot");
+	src: url("http://db.onlinewebfonts.com/t/98a34676ba814c4848424f733521ea58.eot?#iefix") format("embedded-opentype"),
+		url("http://db.onlinewebfonts.com/t/98a34676ba814c4848424f733521ea58.woff2") format("woff2"),
+		url("http://db.onlinewebfonts.com/t/98a34676ba814c4848424f733521ea58.woff") format("woff"),
+		url("http://db.onlinewebfonts.com/t/98a34676ba814c4848424f733521ea58.ttf") format("truetype"),
+		url("http://db.onlinewebfonts.com/t/98a34676ba814c4848424f733521ea58.svg#Basis Grotesque Pro") format("svg");
+	font-weight: bold;
+}
 
+@font-face {
+	font-family: "Basis Grotesque Pro";
+	src: url("http://db.onlinewebfonts.com/t/d4b94d05a5205e34fbe37e855b9270c4.eot");
+	src: url("http://db.onlinewebfonts.com/t/d4b94d05a5205e34fbe37e855b9270c4.eot?#iefix") format("embedded-opentype"),
+		url("http://db.onlinewebfonts.com/t/d4b94d05a5205e34fbe37e855b9270c4.woff2") format("woff2"),
+		url("http://db.onlinewebfonts.com/t/d4b94d05a5205e34fbe37e855b9270c4.woff") format("woff"),
+		url("http://db.onlinewebfonts.com/t/d4b94d05a5205e34fbe37e855b9270c4.ttf") format("truetype"),
+		url("http://db.onlinewebfonts.com/t/d4b94d05a5205e34fbe37e855b9270c4.svg#Basis Grotesque Pro") format("svg");
+	font-weight: bold;
+	font-style: italic;
+}
 
-/* == fonts == */
-
-
-/*==================================================*/
+@font-face {
+	font-family: "Basis Grotesque Pro";
+	src: ("http://db.onlinewebfonts.com/t/8ce60fb425a6d82095ccc5ec72e15f7a.eot");
+	src: url("http://db.onlinewebfonts.com/t/8ce60fb425a6d82095ccc5ec72e15f7a.eot?#iefix") format("embedded-opentype"),
+		url("http://db.onlinewebfonts.com/t/8ce60fb425a6d82095ccc5ec72e15f7a.woff2") format("woff2"),
+		url("http://db.onlinewebfonts.com/t/8ce60fb425a6d82095ccc5ec72e15f7a.woff") format("woff"),
+		url("http://db.onlinewebfonts.com/t/8ce60fb425a6d82095ccc5ec72e15f7a.ttf") format("truetype"),
+		url("http://db.onlinewebfonts.com/t/8ce60fb425a6d82095ccc5ec72e15f7a.svg#Basis Grotesque Pro") format("svg");
+	font-style: italic;
+}
 
 html {
-	font-family: Montserrat, Barlow, Inter, sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !important;
+	/* font-family: Montserrat, Barlow, Inter, sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !important; */
+	font-family: var(--ls-font-family),
+		sans-serif !important;
 }
 
 /* html .white-theme {
@@ -622,7 +663,7 @@ mark {
 	color: var(--inverted-text);
 	padding: 0 4px;
 	border-radius: 3px;
-	/* font-weight: 700; */
+	/* font-weight: bold; */
 }
 
 mark a {
@@ -654,7 +695,7 @@ mark a:hover {
 	/* color: var(--frontend); */
 	padding: 0 0px;
 	border-radius: 3px;
-	font-weight: 700;
+	font-weight: bold;
 	text-decoration: underline;
 }
 
@@ -730,7 +771,7 @@ mark a:hover {
 	vertical-align: middle;
 	margin: 0px 6px 0px 2px;
 	border-radius: 3px;
-	font-weight: 700;
+	font-weight: bold;
 	width: 1rem;
 	height: 1rem;
 	opacity: 0.8;
@@ -800,7 +841,7 @@ mark a:hover {
 	vertical-align: middle;
 	margin: 0px 6px 0px 2px;
 	border-radius: 3px;
-	font-weight: 700;
+	font-weight: bold;
 	width: 1rem;
 	height: 1rem;
 	opacity: 0.8;
@@ -1186,7 +1227,7 @@ th {
 	width: calc(var(--ls-main-content-max-width) - 160px);
 	/* font-size: 38px; */
 	/* font-family: Barlow; */
-	font-weight: 600;
+	font-weight: bold;
 	color: var(--ls-primary-text-color);
 }
 
@@ -1384,7 +1425,7 @@ h1.title {
 	font-size: 1.6em !important;
 	margin: 0.5em 0 0em 0;
 	/* font-family: Barlow; */
-	font-weight: 700;
+	font-weight: bold;
 }
 
 .ls-block h3 {
@@ -1404,7 +1445,7 @@ h1.title {
 	z-index: 2;
 	padding: 2px 1em 2px 1em;
 	white-space: nowrap;
-	font-weight: 600;
+	font-weight: bold;
 	border: 2px solid var(--ls-tertiary-background-color);
 	border-radius: 3px;
 	width: auto;
@@ -1641,7 +1682,7 @@ div .open-block-ref-link {
 }
 
 .blocks-properties .my-1 b {
-	font-weight: 500;
+	font-weight: bold;
 	color: var(--text-accent)
 }
 
@@ -1947,7 +1988,7 @@ a.priority[href="#/page/C"]:before {
 
 a.priority:before {
 	font-size: 0.9rem;
-	font-weight: 400;
+	font-weight: bold;
 	padding: 1px 4px 0px 3px;
 	margin: 0px 2px 0px 0px;
 	border-radius: var(--ls-border-radius-low);
@@ -2118,7 +2159,7 @@ div[data-refs-self*="kanban"]>.block-children>div {
 /* #kanbansmall : smaller font with hover zoom */
 div[data-refs-self*="kanban-small"]>.block-children .block-content {
 	font-size: 11px;
-	font-weight: 300;
+	font-weight: normal;
 }
 
 div[data-refs-self*="kanban-small"]>.block-children .block-content:hover {
