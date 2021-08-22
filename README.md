@@ -19,7 +19,7 @@ An enhanced version of the default Logseq theme.
 
 - **Option 1:** Automated updates
   1. Download this repository (clone or as zip file, then extract)
-  2. Follow the instructions provided [here](TODO LINK TO MY DOCUMENTATION) to load the `plugin` folder
+  2. Follow the instructions provided [here](https://mschmidtkorth.github.io/logseq-msk-docs/#/page/61225f50-3c64-4b85-beed-fb87f65655ee) to load the `plugin` folder
 - **Option 2:** No automated updates, using `custom.css`
   1. Open your `logseq/custom.css` file ([details](https://mschmidtkorth.github.io/logseq-msk-docs/#/page/Custom%20CSS))
   2. Replace its content with the one from [this file](https://github.com/mschmidtkorth/logseq-msk-enhanced/blob/main/custom.css) (copy & paste)
