@@ -1,0 +1,17 @@
+{
+    "name": "MSK Enhanced",
+    "author": "mschmidtkorth",
+    "version": "0.0.1",
+    "description": "An enhanced version of the default theme.",
+    "logseq": {
+      "themes": [
+        {
+          "name": "MSK Enhanced",
+          "url": "./plugin/msk-enhanced.css",
+          "description": "An enhanced version of the default theme."
+        }
+      ],
+      "id": "msk_theme-enhanced",
+      "icon": "./plugin/msk-enhanced.svg"
+    }
+  }
