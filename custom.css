@@ -1,4 +1,3 @@
-/* @import url("https://cdn.jsdelivr.net/gh/pengx17/logseq-dev-theme@main/bullet_threading.css"); */
 .block-control {
 	z-index: 1;
 }
@@ -18,6 +17,11 @@
 }
 
 /* Block bullet path should only show in a nested block */
+/* .ls-block { */
+/* Basic "curve" */
+/* Fix for headings like h1, h2 etc */
+/* Fix multi-line blocks with children */
+/* } */
 .ls-block .bullet {
 	background-color: var(--ls-block-bullet-active-color);
 }
@@ -30,17 +34,22 @@
 .ls-block:not(:focus-within) .bullet {
 	background-color: var(--ls-block-bullet-color);
 	transform: scale(1);
+	box-shadow: none;
 }
 
+/* Lower end */
 .ls-block .ls-block>div>div.items-center::before {
 	pointer-events: none;
 	content: "";
-	left: 0;
+	left: calc(var(--ls-block-bullet-threading-width) * -1);
+	/* left: 0 */
 	right: 6px;
-	left: -0px;
-	top: -1px;
-	bottom: -1px;
-	transform: translate(calc(var(--ls-block-bullet-threading-width) * -1), calc(-50% + var(--ls-block-bullet-threading-width) * 0.5));
+	left: -2px;
+	/* /* top: -1px; */
+	/* bottom: -1px; */
+	top: calc(-50% + var(--ls-block-bullet-threading-width) * 0.5 - 1px);
+	bottom: 50%;
+	/* transform: translate(calc(var(--ls-block-bullet-threading-width) * -1), calc(-50% + var(--ls-block-bullet-threading-width) * 0.5)); */
 	/* shift left 1px for border */
 	position: absolute;
 	border-left: var(--ls-block-bullet-threading-width) solid transparent;
@@ -52,14 +61,17 @@
 	border-color: var(--ls-block-bullet-active-color);
 }
 
+/* Upper start */
 .ls-block .block-children>.ls-block::before {
 	pointer-events: none;
 	content: "";
 	top: -.7rem;
+	/* top: -1rem; */
 	bottom: 0;
 	border-left: var(--ls-block-bullet-threading-width) solid transparent;
-	left: 1px;
-	transform: translate(calc(var(--ls-block-bullet-threading-width) * -1));
+	left: -1px;
+	/* left: calc(var(--ls-block-bullet-threading-width) * -1); */
+	/* transform: translate(calc(var(--ls-block-bullet-threading-width) * -1)); */
 	position: absolute;
 }
 
@@ -69,6 +81,10 @@
 
 .ls-block .block-children:focus-within>.ls-block:focus-within~.ls-block::before {
 	border-color: transparent;
+}
+
+.ls-block>.items-baseline {
+	align-items: initial;
 }
 
 /* Remove to prevent double lines */
@@ -103,18 +119,7 @@ span .bullet-container {
 	z-index: 1;
 }
 
-/* Sidebar on the left side */
-/* #app-container {
-    flex-direction: row-reverse;
-} */
-
-/* Sidebar button on the left side */
-/* .cp__header a:last-child {
-    order: -1;
-} */
-
-/* https://github.com/cannibalox/logseq-dark-hpx logseq-darker-hpx.user.css */
-
+/* === Variables === */
 .white-theme,
 html[data-theme=light] {
 	/* color palette: f4f1de/e07a5f/3d405b/81b29a/f2cc8f/+white+dark black */
@@ -170,7 +175,7 @@ html[data-theme=light] {
 	/*#f4f1de;*/
 	--ls-page-inline-code-color: var(--orange);
 	/* SCROLLBARS */
-	--ls-scrollbar-foreground-color: var(--pink);
+	--ls-scrollbar-foreground-color: var(--gray-light);
 	--ls-scrollbar-background-color: var(--ls-tertiary-background-color);
 	--ls-scrollbar-thumb-hover-color: rgba(255, 59, 59, .2);
 
@@ -210,7 +215,7 @@ html[data-theme=light] {
 	--datepicker-available-hoverbgcolor: #192731;
 
 	--text-accent: #789eb0;
-	--text-accentLight: #789eb038;
+	--text-accent-light: #789eb038;
 	--text-highlight: var(--yellow);
 	--inverted-text: #FFF;
 	--highlight-light: #080808;
@@ -222,18 +227,18 @@ html[data-theme=light] {
 	--red: #f55;
 	--orange: #e07a5f;
 	--yellow: #eb9f3d;
-	--yellowLight: #e9ad5f3b;
+	--yellow-light: #e9ad5f3b;
 	--green: #8fd876;
 	--purple: #519fea;
-	--purple-hover: #bf93f988;
+	/* --purple-hover: #bf93f988; */
 	--cyan: #71c0e4;
 	--cyan-hover: #8be9fd88;
-	--pink: #d4d4d4;
 	--gray: #a9a9a9;
-	--pink-hover: #ff79c688;
+	--gray-light: #d4d4d4;
+	/* --pink-hover: #ff79c688; */
 	--background: #282a36;
 	--light-background: #343746;
-	--lighter-background: #424450;
+	/* --lighter-background: #424450; */
 	--dark-background: #21222c;
 	--darker-background: #191a21;
 	--foreground: var(--orange);
@@ -241,7 +246,7 @@ html[data-theme=light] {
 	--path: var(--orange);
 	/* --selection: #f2cc8f; */
 	--selection: rgba(240, 203, 193, 0.582);
-	--selectionCode: var(--selection);
+	--selection-code: var(--selection);
 	/* --code-current-line: #f2cc8f; */
 	--code-current-line: rgba(240, 203, 193, 0.582);
 	--text-code: var(--ls-primary-text-color);
@@ -306,7 +311,7 @@ html[data-theme=dark] {
 	/* --datepicker-available-hovercolor: #F56A02; */
 	--datepicker-available-hoverbgcolor: #192731;
 	--text-accent: #789eb0;
-	--text-accentLight: #789eb038;
+	--text-accent-light: #789eb038;
 	--text-highlight: var(--yellow);
 	--inverted-text: #262626;
 	--highlight-light: #0b0a0bf0;
@@ -325,21 +330,28 @@ html[data-theme=dark] {
 	--red: #f55;
 	--orange: #F56A02;
 	--yellow: #e9ad5f;
-	--yellowLight: #e9ad5f3b;
+	--yellow-light: #e9ad5f3b;
 	--green: #8fd876;
 	--purple: #519fea;
-	--purple-hover: #bf93f988;
+	/* --purple-hover: #bf93f988; */
 	--cyan: #71c0e4;
 	--cyan-hover: #8be9fd88;
-	--pink: #d4d4d4;
-	--pink-hover: #ff79c688;
+	--gray-light: #d4d4d4;
+	/* --pink-hover: #ff79c688; */
 	--gray: #a9a9a9;
 	--logo-fill: #F56A02;
 	--path: #FFF;
 	--selection: #8be9fd88;
-	--selectionCode: var(--dark-background);
+	--selection-code: var(--dark-background);
 	--code-current-line: var(--dark-background);
 	--text-code: var(--ls-primary-text-color);
+
+	--color-level-1: var(--ls-secondary-background-color);
+	--color-level-2: var(--ls-tertiary-background-color);
+	--color-level-3: var(--ls-quaternary-background-color);
+	--color-level-4: #195d6c;
+	--color-level-5: #266c7d;
+	--color-level-6: #3a7e8e;
 }
 
 /* @media only screen and (min-width: 1024px) {
@@ -348,8 +360,6 @@ html[data-theme=dark] {
 			--ls-main-content-max-width-wide: 80% !important;
 		}
 	} */
-
-/* @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); */
 
 :root {
 	/* --ls-main-content-max-width: 100vw; /* Always wide width */
@@ -369,6 +379,8 @@ html[data-theme=dark] {
 /* === Fonts === */
 /* @import url('https://fonts.googleapis.com/css?family=Proxima+Nova'); */
 /* @import url('https://fonts.googleapis.com/css?family=Montserrat'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); */
+
 @font-face {
 	font-family: "Pacifico";
 	src: url("http://db.onlinewebfonts.com/t/18f37957c6d3d59b4dfe138b7ed98832.eot");
@@ -426,22 +438,45 @@ html {
 		sans-serif !important;
 }
 
-/* === Header === */
+/* ====================
+	USER INTERFACE
+   ====================*/
+/* === Header menu === */
+a.menu-link {
+	background-color: var(--ls-secondary-background-color);
+	/* color: var(--ls-link-text-hover-color) */
+}
+
+a.menu-link:hover {
+	/* color: var(--ls-link-text-hover-color); */
+	background-color: var(--ls-primary-background-color);
+	opacity: 1.0;
+}
+
+.white-theme a.menu-link {
+	background-color: var(--ls-secondary-background-color);
+}
+
+.white-theme a.menu-link:hover {
+	/* background-color: #f2cc8f; */
+	background-color: var(--item-highlight-solid);
+}
+
 .cp__header {
 	height: 2.4rem;
 	background-color: var(--ls-primary-background-color);
-}
-
-/* logo */
-.cp__header-logo,
-.cp__right-menu-button {
-	opacity: .7 !important;
 }
 
 /* Graph icon in header */
 /* .cp__header-logo svg {
 	fill: var(--logo-fill);
 } */
+
+.cp__header-logo,
+.cp__right-menu-button {
+	opacity: .7 !important;
+}
+
 .cp__header-logo .svg-shadow {
 	-webkit-filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, .7));
 	filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, .5));
@@ -456,33 +491,31 @@ a svg {
 	border-radius: 3px;
 }
 
-/* Floating sidebar - nice as it does not shift content, but also cannot display two pages next to each other via shift-click */
-/*.cp__right-sidebar {
-	position: fixed;
-	top: 3rem;
-	right: 0;
-	width: 0;
-	opacity: .9;
-	height: 102vh;
-	overflow-x: hidden;
-	overflow-y: auto;
-	z-index: 9;
-	transition: width .3s, opacity .2s;
-	border-radius: var(--ls-border-radius-low) 0 0 0;
-	box-sizing: border-box;
-	background-color: var(--ls-secondary-background-color, #d8e1e8);
-	padding-bottom: 48px;
-}*/
-
-/* == Blocks children tree line realign === */
-.block-children {
-	border-left: 1px solid;
-	border-left-color: var(--ls-guideline-color, #ddd);
-	margin-left: 1.05rem !important;
+/* === Search === */
+.search-ac {
+	min-width: 450px;
 }
 
-/* == search deco == */
+/* #search_field {
+	background-color: var(--ls-search-background-color);
+	color: var(--ls-secondary-text-color);
+	height: 30px;
+	padding: 0px 50px;
+	margin: 10px -5px;
+	width: 500px;
+} */
 
+#search-field,
+#search-field:focus {
+	background-color: var(--ls-secondary-background-color)
+}
+
+/* Search icon */
+#search-wrapper div svg {
+	color: inherit !important;
+}
+
+/* == Search deco == */
 /*    #search.flex-1 > .flex {
     width: 700px;
     background-color: #000;
@@ -505,68 +538,65 @@ a svg {
     }
     */
 
-/* === Search === */
-.search-ac {
-	min-width: 450px;
-}
+/* === Sidebar === */
+/* Floating sidebar - nice as it does not shift content, but also cannot display two pages next to each other via shift-click */
+/*.cp__right-sidebar {
+	position: fixed;
+	top: 3rem;
+	right: 0;
+	width: 0;
+	opacity: .9;
+	height: 102vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 9;
+	transition: width .3s, opacity .2s;
+	border-radius: var(--ls-border-radius-low) 0 0 0;
+	box-sizing: border-box;
+	background-color: var(--ls-secondary-background-color, #d8e1e8);
+	padding-bottom: 48px;
+}*/
 
-/* #search_field {
-	background-color: var(--ls-search-background-color);
-	color: var(--ls-secondary-text-color);
-	height: 30px;
-	padding: 0px 50px;
-	margin: 10px -5px;
-	width: 500px;
+/* Sidebar on the left side */
+/* #app-container {
+    flex-direction: row-reverse;
 } */
 
-#search-field,
-#search-field:focus {
-	background-color: var(--ls-secondary-background-color)
-}
-
-.shadow-lg {
-	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 35%), 0 4px 6px -2px rgba(0, 0, 0, .05);
-}
-
-
-/* Change orange color of search icon */
-
-#search-wrapper div svg {
-	color: inherit !important;
-}
-
-a.menu-link {
-	background-color: var(--ls-secondary-background-color);
-	/* color: var(--ls-link-text-hover-color) */
-}
-
-a.menu-link:hover {
-	/* color: var(--ls-link-text-hover-color); */
-	background-color: var(--ls-primary-background-color);
-	opacity: 1.0;
-}
-
-.white-theme a.menu-link {
-	background-color: var(--ls-secondary-background-color);
-}
-
-.white-theme a.menu-link:hover {
-	/* background-color: #f2cc8f; */
-	background-color: var(--item-highlight-solid);
-}
-
-a.chosen {
-	background: var(--ls-a-chosen-bg);
-	font-weight: bold;
-}
-
-
-/* a {
-	color: var(--text-accent);
+/* Sidebar button on the left side */
+/* .cp__header a:last-child {
+    order: -1;
 } */
 
-.bg-base-3 {
-	background-color: var(--ls-secondary-background-color);
+/* === Scrollbars === */
+html:not(.is-mac) ::-webkit-scrollbar {
+	background-color: black;
+}
+
+html:not(.is-mac) ::-webkit-scrollbar-thumb {
+	background-color: #354b4e;
+	-webkit-border-radius: 0px !important;
+}
+
+html:not(.is-mac) ::-webkit-scrollbar-thumb:hover {
+	background-color: #27353a;
+}
+
+html:not(.is-mac) ::-webkit-scrollbar {
+	width: 14px;
+	height: 12px;
+	-webkit-border-radius: 0px;
+}
+
+/* === Context menu for /commands === */
+.ui__ac-group-name {
+	color: var(--ls-link-text-color) !important;
+}
+
+/* === Buttons, Toggles and Dropdown lists === */
+.ui__button:hover,
+span[role="checkbox"]:hover,
+.form-select:hover {
+	opacity: .8;
 }
 
 .white-theme .ui__button {
@@ -575,14 +605,6 @@ a.chosen {
 
 .dark-theme .ui__button {
 	background-color: var(--cyan-hover);
-}
-
-.white-theme .ui__button:hover,
-.white-theme span[role="checkbox"]:hover,
-.dark-theme .ui__button:hover,
-.dark-theme span[role="checkbox"]:hover,
-.form-select:hover {
-	opacity: .7;
 }
 
 /* Note: aria-checked is always false, so we select by color of default theme */
@@ -594,13 +616,198 @@ a.chosen {
 	background-color: var(--cyan-hover);
 }
 
-/* === Highlighted text (mark) === */
-/* Colored blocks */
+/* ====================
+	FEATURES
+   ====================*/
+
+/* === Admonition blocks - tip, warning, info etc. === */
+.admonitionblock {
+	margin: 0.5em 0 0.5em 0;
+	padding: 1rem 1rem;
+	background-color: var(--ls-tertiary-background-color);
+	border-radius: 3px;
+}
+
+.important .text-lg {
+	font-size: 1rem;
+	line-height: 1.75rem;
+	/* color: var(--admo-text-important); */
+}
+
+.important .text-lg .is-paragraph:first-line {
+	/* font-size: 1rem; */
+	line-height: 1.75rem;
+	font-weight: bold;
+	/* color: var(--admo-text-important); */
+	/* Cannot style just single line */
+	/* color: var(--text-inverted); */
+	/* border-radius: 3px;
+	padding: 3px;
+	display: block; */
+}
+
+content .admonitionblock {
+	padding: 16px 16px 16px 12px;
+	background-color: var(--ls-callout-background-color);
+	margin: unset;
+}
+
+.content .admonitionblock .text-lg {
+	font-size: 0.9em;
+	margin-left: 0;
+	line-height: 1.35rem;
+}
+
+.content .admonitionblock .admonition-icon {
+	padding-right: 0.65em;
+	border: unset;
+}
+
+.content .admonitionblock .admonition-icon svg.svg-shadow {
+	-webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
+	filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.content .admonitionblock .admonition-icon svg.h-8.w-8 {
+	width: 1.7em;
+	height: 1.7em;
+}
+
+.content .admonitionblock .admonition-icon svg.important {
+	color: #c75252;
+}
+
+.content .admonitionblock .admonition-icon svg.caution {
+	color: #e08d5c;
+}
+
+.content .admonitionblock .admonition-icon svg.warning {
+	fill: var(--orange);
+}
+
+.content .admonitionblock .admonition-icon svg.tip {
+	color: #edc987;
+}
+
+.content .admonitionblock .admonition-icon svg.note {
+	color: var(--ls-secondary-text-color);
+	fill: var(--gray);
+}
+
+/* Style banners (warning, note, tip etc.) - exclude quote and second line of normal paragraphs. However, if line is too long, then second line will not be formatted... */
+
+
+/* .block-content :not(span):not(.block-body):not(blockquote)>.is-paragraph::first-line {
+	font-size: 12px;
+	text-transform: uppercase;
+} */
+
+/* === Footnotes === */
+.footdef {
+	font-size: .8em !important;
+}
+
+/* === Notifications === */
+.ui__notifications-content div {
+	color: var(--ls-primary-text-color);
+}
+
+/* ====================
+	TEXT EDITING
+   ====================*/
+
+/* === Unordered lists === */
+ul {
+	list-style-type: square;
+	margin-top: 10px;
+}
+
+.block-body ul {
+	margin-bottom: 1em;
+}
+
+/* ul li::marker {
+	font-size: 10px;
+} */
+
+/* === Ordered lists ===  */
+ol {
+	list-style: none;
+	counter-reset: item;
+}
+
+.block-body ol {
+	margin-bottom: 1em;
+}
+
+ol li {
+	counter-increment: item;
+	margin-bottom: 5px;
+}
+
+ol li:before {
+	margin-right: 10px;
+	content: counter(item);
+	/* background: lightblue; */
+	/* border-radius: 100%; */
+	/* color: white; */
+	width: 1.2em;
+	text-align: center;
+	/* display: inline-block; */
+	/* font-weight: semibold; */
+	/* color: var(--ls-page-checkbox-color); */
+	color: var(--ls-primary-background-color) !important;
+	background-color: var(--ls-page-checkbox-color);
+	font-size: 0.7em;
+	border-radius: 3px;
+	float: left;
+	/* Prevent line wrap */
+	/* position: absolute; */
+	margin-top: 0.3em;
+}
+
+ol li p {
+	/* float:right; */
+	width: 90%;
+	/* Reduce width by custom li identifier so line does not wrap */
+}
+
+
+
+
+
+
+
+
+
+/* === Blocks children tree line realignment === */
+.block-children {
+	border-left: 1px solid;
+	border-left-color: var(--ls-guideline-color, #ddd);
+	margin-left: 1.05rem !important;
+}
+
+/* === Miscellaneous === */
+.shadow-lg {
+	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 35%), 0 4px 6px -2px rgba(0, 0, 0, .05);
+}
+
+a.chosen {
+	background: var(--ls-a-chosen-bg);
+	font-weight: bold;
+}
+
+.bg-base-3 {
+	background-color: var(--ls-secondary-background-color);
+}
+
+
+/* === Colored text blocks (via mark, right-click) === */
 .inline .with-bg-color {
 	border-radius: 3px;
 }
 
-/* ==Highlighted== */
+/* === Highlighted text (via ===) === */
 mark {
 	background: var(--text-highlight);
 	color: var(--inverted-text);
@@ -627,7 +834,7 @@ mark code {
 }
 
 mark a:hover {
-	background: var(--yellowLight);
+	background: var(--yellow-light);
 	color: #FFF !important;
 	/* color: var(--ls-tertiary-background-color) !important; */
 }
@@ -656,7 +863,10 @@ mark a:hover {
 	border: 2px solid var(--ls-block-bullet-color);
 }
 
-/* === Checkboxes === */
+
+
+/* === Task Management === */
+/* Checkboxes */
 .form-checkbox {
 	display: inline-block;
 	vertical-align: middle;
@@ -674,13 +884,7 @@ mark a:hover {
 	background-color: var(--ls-page-checkbox-border-color) !important;
 }
 
-/* Context menu */
-.ui__ac-group-name {
-	color: var(--ls-link-text-color) !important;
-}
-
-/* === TO DO / DOING marker-switch === */
-/* Default */
+/* Default; also applies to NOW */
 .marker-switch,
 .block-marker.waiting {
 	font-size: 70%;
@@ -696,9 +900,7 @@ mark a:hover {
 	color: var(--marker-switch-color);
 }
 
-
 /* TODO */
-
 [title="Change from TODO to DOING"] {
 	background-color: var(--marker-switch-bgcolor);
 	color: var(--marker-switch-color);
@@ -709,11 +911,9 @@ mark a:hover {
 	padding: 3px;
 }
 
-
 /* DOING */
-
 [title="Change from DOING to TODO"] {
-	background-color: var(--yellowLight) !important;
+	background-color: var(--yellow-light) !important;
 	color: var(--yellow) !important;
 	opacity: 0.8;
 	visibility: visible;
@@ -722,11 +922,18 @@ mark a:hover {
 	padding: 3px;
 }
 
+/* .doing:after {
+	content: "🚧";
+	display: inline-block;
+	padding: 0 0px;
+	margin: 0 0px;
+	position: absolute;
+	left: 20px;
+} */
 
-/* Later */
-
+/* LATER */
 [title="Change from LATER to NOW"] {
-	background-color: var(--text-accentLight);
+	background-color: var(--text-accent-light);
 	color: var(--comment);
 	opacity: 0.8;
 	visibility: visible;
@@ -735,11 +942,9 @@ mark a:hover {
 	padding: 3px;
 }
 
-
 /* WAITING */
-
 .block-marker.waiting {
-	background-color: var(--yellowLight) !important;
+	background-color: var(--yellow-light) !important;
 	color: var(--text-accent) !important;
 	opacity: 0.8;
 	visibility: visible;
@@ -748,9 +953,7 @@ mark a:hover {
 	padding: 3px;
 }
 
-
 /* CANCELED */
-
 .canceled::before {
 	content: "CANCELED";
 	font-size: 70%;
@@ -763,10 +966,9 @@ mark a:hover {
 	opacity: 0.8;
 	border: 1px solid;
 	padding: 3px;
-	background-color: var(--text-accentLight);
+	background-color: var(--text-accent-light);
 	color: var(--text-accent);
 }
-
 
 /* .todo:after {
 	content: "🔥";
@@ -777,27 +979,49 @@ mark a:hover {
 	top: 0px;
 } */
 
-
-/* DOING */
-
-[title="Change from DOING to TODO"] {
-	color: var(--text-accent);
-	background-color: var(--marker-switch-bgcolor);
-	opacity: 0.8;
-	/* display: inline-block; */
-	/* margin: 0 5px 0 20px; */
-	padding: 3px;
+/* DONE */
+.done {
+	text-decoration: none;
+	opacity: .7;
 }
 
+/* ==== Task priorities (from https://github.com/dracula/logseq/blob/master/custom.css) ==== */
+.priority {
+	/* color: var(--ls-tag-text-color); */
+	opacity: 1 !important;
+	/* Hide text */
+	font-size: 0px;
+}
 
-/* .doing:after {
-	content: "🚧";
-	display: inline-block;
-	padding: 0 0px;
-	margin: 0 0px;
-	position: absolute;
-	left: 20px;
-} */
+.priority:hover,
+a.tooltip-priority:hover,
+.priority:hover::before {
+	opacity: 0.8;
+}
+
+a.priority[href="#/page/A"]:before {
+	content: "A";
+	background: var(--red);
+}
+
+a.priority[href="#/page/B"]:before {
+	content: "B";
+	background: var(--yellow);
+}
+
+a.priority[href="#/page/C"]:before {
+	content: "C";
+	background: var(--green);
+}
+
+a.priority:before {
+	font-size: 0.9rem;
+	font-weight: bold;
+	padding: 1px 4px 0px 3px;
+	margin: 0px 2px 0px 0px;
+	border-radius: var(--ls-border-radius-low);
+	color: var(--ls-primary-background-color);
+}
 
 /* === iFrame embeds (and Youtube, Twitter etc.) === */
 iframe {
@@ -1130,12 +1354,6 @@ a.block-control>.h-4 {
 	margin-left: 3px !important;
 }
 
-/* === DONE === */
-.done {
-	text-decoration: none;
-	opacity: .7;
-}
-
 /* === Datepicker for scheduled/deadline === */
 .dark-theme .datepicker td.active,
 .dark-theme .datepicker td.active:hover,
@@ -1189,111 +1407,88 @@ a.tag:hover {
 	cursor: e-resize !important;
 }
 
-a.tag[href*="important"],
-a.tag[href*="achievements"],
-a.tag[href*="mine"] {
-	/* color: #fd3434; */
+a.tag[data-ref*="important"] {
 	background-color: var(--red);
 }
 
-a.tag[href*="inprogress"] {
+a.tag[data-ref*="inprogress"] {
 	color: #adf752;
 }
 
-a.tag[href*="done"] {
+a.tag[data-ref*="done"] {
 	color: #31cfbb;
 }
 
-a.tag[href*="book"]:after {
+a.tag[data-ref*="book"]:after {
 	content: "📚";
 }
 
-a.tag[href*="movie"]:after {
+a.tag[data-ref*="movie"]:after {
 	content: "🎞";
 }
 
-a.tag[href*="soft"]:after {
+a.tag[data-ref*="soft"]:after {
 	content: "💾";
 }
 
-a.tag[href*="tools"]:after {
+a.tag[data-ref*="tools"]:after {
 	content: "🛠";
 }
 
-a.tag[href*="hardware"]:after {
+a.tag[data-ref*="hardware"]:after {
 	content: "💻";
 }
 
-a.tag[href*="TV"]:after {
+a.tag[data-ref*="TV"]:after {
 	content: "📺";
 }
 
-a.tag[href*="3d"]:after {
+a.tag[data-ref*="3d"]:after {
 	content: "💠";
 }
 
-a.tag[href*="2d"]:after {
+a.tag[data-ref*="2d"]:after {
 	content: "🎨";
 }
 
-a.tag[href*="science"]:after {
+a.tag[data-ref*="science"]:after {
 	content: "🧪";
 }
 
-a.tag[href*="boardgame"]:after {
+a.tag[data-ref*="boardgame"]:after {
 	content: "🎲";
 }
 
-a.tag[href="#games"]:after {
+a.tag[data-ref="games"]:after {
 	content: "🕹";
 }
 
-a.tag[href*="audio"]:after {
+a.tag[data-ref*="audio"]:after {
 	content: "🎧";
 }
 
-a.tag[href*="travel"]:after {
+a.tag[data-ref*="travel"]:after {
 	content: "✈";
 }
 
-a.tag[href*="2buy"]:after {
+a.tag[data-ref*="to-buy"]:after {
 	content: "🛒";
 }
 
-a.tag[href*="health"]:after {
+a.tag[data-ref*="health"]:after {
 	content: "💊";
 }
 
-a.tag[href*="photo"]:after {
+a.tag[data-ref*="photo"]:after {
 	content: "📷";
 }
 
-a.tag[href*="food"]:after {
+a.tag[data-ref*="food"]:after {
 	content: "🥗";
 }
 
-a.tag[href*="cloth"]:after {
+a.tag[data-ref*="cloth"]:after {
 	content: "👕";
-}
-
-/* === Scrollbars === */
-html:not(.is-mac) ::-webkit-scrollbar {
-	background-color: black;
-}
-
-html:not(.is-mac) ::-webkit-scrollbar-thumb {
-	background-color: #354b4e;
-	-webkit-border-radius: 0px !important;
-}
-
-html:not(.is-mac) ::-webkit-scrollbar-thumb:hover {
-	background-color: #27353a;
-}
-
-html:not(.is-mac) ::-webkit-scrollbar {
-	width: 14px;
-	height: 12px;
-	-webkit-border-radius: 0px;
 }
 
 /* === Code === */
@@ -1419,7 +1614,7 @@ html:not(.is-mac) ::-webkit-scrollbar {
 
 .CodeMirror-selected {
 	/* background: rgba(255, 255, 255, 0.1); */
-	background: var(--selectionCode) !important;
+	background: var(--selection-code) !important;
 
 }
 
@@ -1449,11 +1644,11 @@ html:not(.is-mac) ::-webkit-scrollbar {
 }
 
 .cm-s-default span.cm-operator {
-	color: var(--pink);
+	color: var(--gray-light);
 }
 
 .cm-s-default span.cm-keyword {
-	color: var(--pink);
+	color: var(--gray-light);
 }
 
 .cm-s-default span.cm-atom {
@@ -1465,7 +1660,7 @@ html:not(.is-mac) ::-webkit-scrollbar {
 }
 
 .cm-s-default span.cm-tag {
-	color: var(--pink);
+	color: var(--gray-light);
 }
 
 .cm-s-default span.cm-attribute {
@@ -1578,154 +1773,9 @@ div .open-block-ref-link {
 	/* filter: invert(3%) sepia(100%) saturate(1920%) hue-rotate(0deg) brightness(1419%) contrast(249%); */
 }
 
-/* === Admonition blocks - tip, warning, info etc. === */
-.admonitionblock {
-	margin: 0.5em 0 0.5em 0;
-	padding: 1rem 1rem;
-	background-color: var(--ls-tertiary-background-color);
-	border-radius: 3px;
-}
-
-.important .text-lg {
-	font-size: 1rem;
-	line-height: 1.75rem;
-	/* color: var(--admo-text-important); */
-}
-
-.important .text-lg .is-paragraph:first-line {
-	/* font-size: 1rem; */
-	line-height: 1.75rem;
-	font-weight: bold;
-	/* color: var(--admo-text-important); */
-	/* Cannot style just single line */
-	/* color: var(--text-inverted); */
-	/* border-radius: 3px;
-	padding: 3px;
-	display: block; */
-}
-
-content .admonitionblock {
-	padding: 16px 16px 16px 12px;
-	background-color: var(--ls-callout-background-color);
-	margin: unset;
-}
-
-.content .admonitionblock .text-lg {
-	font-size: 0.9em;
-	margin-left: 0;
-	line-height: 1.35rem;
-}
-
-.content .admonitionblock .admonition-icon {
-	padding-right: 0.65em;
-	border: unset;
-}
-
-.content .admonitionblock .admonition-icon svg.svg-shadow {
-	-webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
-	filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
-}
-
-.content .admonitionblock .admonition-icon svg.h-8.w-8 {
-	width: 1.7em;
-	height: 1.7em;
-}
-
-.content .admonitionblock .admonition-icon svg.important {
-	color: #c75252;
-}
-
-.content .admonitionblock .admonition-icon svg.caution {
-	color: #e08d5c;
-}
-
-.content .admonitionblock .admonition-icon svg.warning {
-	fill: var(--orange);
-}
-
-.content .admonitionblock .admonition-icon svg.tip {
-	color: #edc987;
-}
-
-.content .admonitionblock .admonition-icon svg.note {
-	color: var(--ls-secondary-text-color);
-	fill: var(--gray);
-}
-
-/* Style banners (warning, note, tip etc.) - exclude quote and second line of normal paragraphs. However, if line is too long, then second line will not be formatted... */
 
 
-/* .block-content :not(span):not(.block-body):not(blockquote)>.is-paragraph::first-line {
-	font-size: 12px;
-	text-transform: uppercase;
-} */
 
-/* === Footnotes === */
-.footdef {
-	font-size: .8em !important;
-}
-
-/* === Unordered lists === */
-ul {
-	list-style-type: square;
-	margin-top: 10px;
-}
-
-.block-body ul {
-	margin-bottom: 1em;
-}
-
-/* ul li::marker {
-	font-size: 10px;
-} */
-
-/* === Ordered lists ===  */
-ol {
-	list-style: none;
-	counter-reset: item;
-}
-
-.block-body ol {
-	margin-bottom: 1em;
-}
-
-ol li {
-	counter-increment: item;
-	margin-bottom: 5px;
-}
-
-ol li:before {
-	margin-right: 10px;
-	content: counter(item);
-	/* background: lightblue; */
-	/* border-radius: 100%; */
-	/* color: white; */
-	width: 1.2em;
-	text-align: center;
-	/* display: inline-block; */
-	/* font-weight: semibold; */
-	/* color: var(--ls-page-checkbox-color); */
-	color: var(--ls-primary-background-color) !important;
-	background-color: var(--ls-page-checkbox-color);
-	font-size: 0.7em;
-	border-radius: 3px;
-	float: left;
-	/* Prevent line wrap */
-	/* position: absolute; */
-	margin-top: 0.3em;
-}
-
-ol li p {
-	/* float:right; */
-	width: 90%;
-	/* Reduce width by custom li identifier so line does not wrap */
-}
-
-
-/* === Notifications === */
-.ui__notifications-content div {
-	color: var(--ls-primary-text-color);
-}
 
 /* === Icon to distinguish external links === */
 a.external-link {
@@ -1816,44 +1866,6 @@ a.external-link:after {
 	border: none;
 } */
 
-
-/* === Task priorities (from https://github.com/dracula/logseq/blob/master/custom.css) === */
-.priority {
-	/* color: var(--ls-tag-text-color); */
-	opacity: 1 !important;
-	/* Hide text */
-	font-size: 0px;
-}
-
-.priority:hover,
-a.tooltip-priority:hover,
-.priority:hover::before {
-	opacity: 0.8;
-}
-
-a.priority[href="#/page/A"]:before {
-	content: "A";
-	background: var(--red);
-}
-
-a.priority[href="#/page/B"]:before {
-	content: "B";
-	background: var(--yellow);
-}
-
-a.priority[href="#/page/C"]:before {
-	content: "C";
-	background: var(--green);
-}
-
-a.priority:before {
-	font-size: 0.9rem;
-	font-weight: bold;
-	padding: 1px 4px 0px 3px;
-	margin: 0px 2px 0px 0px;
-	border-radius: var(--ls-border-radius-low);
-	color: var(--ls-primary-background-color);
-}
 
 /* === Dotted background === */
 /* .cp__right-sidebar .sidebar-item {
@@ -2050,7 +2062,7 @@ div[data-refs-self*="kanban-w400"]>.block-children .block-content {
 	width: 380px;
 }
 
-iv[data-refs-self*="kanban-w300"]>.block-children {
+div[data-refs-self*="kanban-w300"]>.block-children {
 	border: 1px solid var(--ls-block-bullet-border-color);
 	padding: 10px 0;
 }
