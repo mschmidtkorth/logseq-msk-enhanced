@@ -7,7 +7,7 @@
       "themes": [
         {
           "name": "MSK Enhanced",
-          "url": "./plugin/msk-enhanced.css",
+          "url": "./custom.css",
           "description": "An enhanced version of the default theme."
         }
       ],
