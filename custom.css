@@ -630,6 +630,11 @@ span[role="checkbox"]:hover,
 	border-radius: 3px;
 }
 
+.admonition-icon svg {
+	/* Remove unnecessary shadow */
+	filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 0px) !important;
+}
+
 .important .text-lg {
 	font-size: 1rem;
 	line-height: 1.75rem;
@@ -717,6 +722,15 @@ content .admonitionblock {
 /* ====================
 	TEXT EDITING
    ====================*/
+
+/* Fix: Keep underlined text on same line  */
+.raw_html+.is-paragraph {
+	display: inline;
+}
+
+.raw_html {
+	display: inline;
+}
 
 /* === Unordered lists === */
 ul {
@@ -1062,6 +1076,15 @@ th {
 	border-radius: 3px;
 }
 
+/* Remove unnecessary indent for query blocks */
+.custom-query .content div>div {
+	padding-left: 0;
+}
+
+.custom-query .initial .text-sm,
+.custom-query .custom-query-title .text-sm {
+	font-size: 0.8em;
+}
 
 /* 	.custom-query .p-1::before {
         content: "";
