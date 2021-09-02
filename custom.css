@@ -382,6 +382,7 @@ html[data-theme=dark] {
 /* @import url('https://fonts.googleapis.com/css?family=Proxima+Nova'); */
 /* @import url('https://fonts.googleapis.com/css?family=Montserrat'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); */
+/* Raleway https://fonts.google.com/specimen/Raleway */
 
 @font-face {
 	font-family: "Pacifico";
@@ -616,6 +617,17 @@ span[role="checkbox"]:hover,
 
 .dark-theme span[role="checkbox"].bg-indigo-600 {
 	background-color: var(--cyan-hover);
+}
+
+/* === Command launcher === */
+/* Remove inner background */
+.cp__command-palette-main .chosen {
+	background: transparent;
+}
+
+/* Improve type readability */
+.cp__command-palette-results code.opacity-20 {
+	opacity: .6;
 }
 
 /* ====================
@@ -1066,6 +1078,23 @@ th {
 .table-wrapper {
 	max-width: 80% !important;
 	margin: auto;
+}
+
+@media only screen and (max-width: 1600px) {
+	.table-wrapper {
+		max-width: 100% !important;
+	}
+}
+
+/* Optimize tables for narrow width */
+.table-wrapper table td {
+	width: auto;
+	min-width: 5em;
+	font-size: 0.8em;
+}
+
+.table-wrapper table th {
+	white-space: nowrap;
 }
 
 /* === Query results block === */
