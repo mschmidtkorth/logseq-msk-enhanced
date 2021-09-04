@@ -1334,7 +1334,7 @@ h1.title {
 	/* Push to right */
 	position: absolute;
 	right: 8px;
-	top: 18px;
+	top: 0px;
 }
 
 .ls-block h5::after {
@@ -1353,7 +1353,7 @@ h1.title {
 	/* Push to right */
 	position: absolute;
 	right: 8px;
-	top: 18px;
+	top: 0px;
 }
 
 .ls-block h2 {
