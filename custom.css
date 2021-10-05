@@ -218,12 +218,17 @@ html[data-theme=light] {
 
 	--text-accent: #789eb0;
 	--text-accent-light: #789eb038;
-	--text-highlight: var(--yellow);
+	--text-highlight-bg: #ffad4167;
+	--text-highlight: #4C4C4C;
+;
 	--inverted-text: #FFF;
 	--highlight-light: #080808;
 	--ls-block-ref-link-text-color: #74ced8;
 	--current-line: #44475a;
 	--comment: #777;
+	/* TEXT EMPHASIS */
+	--bold: #464646;
+	--italic: #464646;
 	/* COLORS */
 	--white: #fff;
 	--red: #f55;
@@ -354,6 +359,8 @@ html[data-theme=dark] {
 	--color-level-4: #195d6c;
 	--color-level-5: #266c7d;
 	--color-level-6: #3a7e8e;
+	--bold: #ebebeb;
+	--italic: #ebebeb;
 }
 
 /* @media only screen and (min-width: 1024px) {
@@ -800,13 +807,24 @@ ol li p {
 	/* Reduce width by custom li identifier so line does not wrap */
 }
 
+/* === Bold and Italic text === */
+/* Emphasize bold text more */
+.dark-theme .inline b {
+	color: #ebebeb;
+}
 
+.white-theme .inline b {
+	color: #464646;
+}
 
+/* Emphasize italic text more */
+.dark-theme .inline i {
+	color: rgb(235, 235, 235);
+}
 
-
-
-
-
+.white-theme .inline i {
+	color: rgb(70, 70, 70);
+}
 
 /* === Blocks children tree line realignment === */
 .block-children {
@@ -842,6 +860,11 @@ mark {
 	padding: 0 4px;
 	border-radius: 3px;
 	/* font-weight: bold; */
+}
+
+.white-theme mark {
+	background: var(--text-highlight-bg);
+	color: var(--text-highlight);
 }
 
 mark a {
@@ -1369,7 +1392,9 @@ h1.title {
 }
 
 /* === Tooltips === */
-.tippy-wrapper>h2 {
+.tippy-wrapper>h2,
+.tippy-wrapper>.page-reference,
+.tippy-wrapper>.my-2 {
 	background: var(--ls-page-properties-background-color);
 	display: inline-flex;
 	align-items: center;
@@ -1406,6 +1431,11 @@ a.block-control>.h-4 {
 
 .initial .blocks-container.flex-1 {
 	margin-left: 3px !important;
+}
+
+/* === Images === */
+.dark-theme .ls-block img {
+	box-shadow: 0 20px 25px -5px rgb(0 0 0 / 100%), 0 10px 10px -5px rgb(0 0 0 / 100%);
 }
 
 /* === Datepicker for scheduled/deadline === */
@@ -1784,7 +1814,6 @@ div .open-block-ref-link {
 }
 
 /* === Block properties === */
-
 .blocks-properties {
 	opacity: 1;
 	background-color: var(--ls-block-properties-background-color);

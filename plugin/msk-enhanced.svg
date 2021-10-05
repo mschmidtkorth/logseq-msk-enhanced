@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    sodipodi:docname="msk-enhanced.svg"
-   inkscape:export-filename="/Users/mschmidtkorth/Github/MSK/logseq-theme-test/msk-enhanced.png"
+   inkscape:export-filename="/Users/mschmidtkorth/Github/MSK/logseq-msk-enhanced-theme/plugin/msk-enhanced.png"
    inkscape:export-xdpi="4"
    inkscape:export-ydpi="4"
    inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
@@ -34,11 +34,11 @@
      inkscape:cx="88.885176"
      inkscape:cy="81.32048"
      inkscape:window-width="1855"
-     inkscape:window-height="1106"
+     inkscape:window-height="1078"
      inkscape:window-x="729"
-     inkscape:window-y="215"
+     inkscape:window-y="187"
      inkscape:window-maximized="0"
-     inkscape:current-layer="g23779"
+     inkscape:current-layer="layer1"
      showguides="true"
      inkscape:guide-bbox="true">
     <sodipodi:guide
@@ -71,7 +71,10 @@
        width="36.224144"
        height="36.168766"
        x="65.138458"
-       y="30.020878" />
+       y="30.020878"
+       inkscape:export-filename="/Users/mschmidtkorth/Github/MSK/logseq-msk-enhanced-theme/plugin/msk-enhanced.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -92,7 +95,10 @@
          x="2.9959872"
          y="20.561897"
          rx="1"
-         ry="1" />
+         ry="1"
+         inkscape:export-filename="/Users/mschmidtkorth/Github/MSK/logseq-msk-enhanced-theme/plugin/msk-enhanced.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300" />
       <rect
          style="fill:#0e2a36;fill-opacity:1;stroke-width:0.5594"
          id="rect858"
@@ -101,13 +107,19 @@
          x="2.9956374"
          y="2.9734476"
          rx="1"
-         ry="1" />
+         ry="1"
+         inkscape:export-filename="/Users/mschmidtkorth/Github/MSK/logseq-msk-enhanced-theme/plugin/msk-enhanced.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300" />
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:9.87778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
          x="5.5823727"
          y="13.151088"
-         id="text3199"><tspan
+         id="text3199"
+         inkscape:export-filename="/Users/mschmidtkorth/Github/MSK/logseq-msk-enhanced-theme/plugin/msk-enhanced.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
            sodipodi:role="line"
            id="tspan3197"
            style="font-weight:bold;font-size:9.87778px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
@@ -118,7 +130,10 @@
          style="font-style:normal;font-weight:normal;font-size:5.29167px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
          x="3.1985381"
          y="29.032061"
-         id="text3199-1"><tspan
+         id="text3199-1"
+         inkscape:export-filename="/Users/mschmidtkorth/Github/MSK/logseq-msk-enhanced-theme/plugin/msk-enhanced.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
            sodipodi:role="line"
            id="tspan3197-8"
            style="font-weight:bold;font-size:5.29167px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
