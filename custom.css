@@ -1417,7 +1417,8 @@ h1.title {
 /* === Folding titles: bigger arrow === */
 a.block-control {
 	margin: -0.4rem 10px 0px 0;
-	padding: 0 24px 0 15px;
+	/* Avoid introduced with 0.4.4 */
+	/* padding: 0 24px 0 15px; */
 	margin-left: -30px !important;
 }
 
