@@ -163,6 +163,7 @@ html[data-theme=light] {
 	/* BULLETS */
 	--ls-block-bullet-border-color: #00b3ff;
 	--ls-block-bullet-color: #3d405b;
+	--ls-block-bullet-color-outer: #aaabb1;
 	--ls-block-highlight-color: var(--selection);
 	--ls-selection-background-color: #e4f2ff;
 	/* CHECKBOXES */
@@ -283,6 +284,7 @@ html[data-theme=dark] {
 	--ls-tag-text-hover-color: var(--ls-link-text-hover-color);
 	--ls-block-bullet-border-color: #57a3dad9;
 	--ls-block-bullet-color: #8abbbb;
+	--ls-block-bullet-color-outer: #9db4b4;
 	--ls-block-highlight-color: #202e3a;
 	--ls-page-checkbox-color: #8abbbb;
 	--ls-page-checkbox-border-color: #8abbbb;
@@ -897,12 +899,13 @@ mark a:hover {
 }
 
 /* === Bullets === */
-.bullet-container .bullet {
+.bullet-container .bullet,
+a:hover>.bullet-container {
 	border-radius: 50%;
 	/* Nested bullets look distorted if changing size */
 	/* width: 5px;
 	height: 5px; */
-	background-color: var(--ls-block-bullet-color);
+	/* background-color: var(--ls-block-bullet-color-outer); */
 }
 
 .bullet-container.bullet-closed {
