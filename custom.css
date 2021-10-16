@@ -220,7 +220,7 @@ html[data-theme=light] {
 	--text-accent-light: #789eb038;
 	--text-highlight-bg: #ffad4167;
 	--text-highlight: #4C4C4C;
-;
+	;
 	--inverted-text: #FFF;
 	--highlight-light: #080808;
 	--ls-block-ref-link-text-color: #74ced8;
@@ -319,7 +319,8 @@ html[data-theme=dark] {
 	--datepicker-available-hoverbgcolor: #192731;
 	--text-accent: #789eb0;
 	--text-accent-light: #789eb038;
-	--text-highlight: var(--yellow);
+	--text-highlight-bg: var(--yellow);
+	--text-highlight: #262626;
 	--inverted-text: #262626;
 	--highlight-light: #0b0a0bf0;
 	--ls-block-ref-link-text-color: #74ced8;
@@ -855,16 +856,11 @@ a.chosen {
 
 /* === Highlighted text (via ===) === */
 mark {
-	background: var(--text-highlight);
-	color: var(--inverted-text);
+	background: var(--text-highlight-bg) !important;
+	color: var(--text-highlight) !important;
 	padding: 0 4px;
 	border-radius: 3px;
 	/* font-weight: bold; */
-}
-
-.white-theme mark {
-	background: var(--text-highlight-bg);
-	color: var(--text-highlight);
 }
 
 mark a {
