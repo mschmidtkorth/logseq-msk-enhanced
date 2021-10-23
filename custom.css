@@ -769,31 +769,31 @@ ul {
 } */
 
 /* === Ordered lists ===  */
-ol {
+/* ol {
 	list-style: none;
 	counter-reset: item;
-}
+} */
 
 .block-body ol {
 	margin-bottom: 1em;
 }
 
 ol li {
-	counter-increment: item;
+	/* counter-increment: item; */
 	margin-bottom: 5px;
 }
 
 ol li:before {
-	margin-right: 10px;
-	content: counter(item);
-	/* background: lightblue; */
-	/* border-radius: 100%; */
 	/* color: white; */
-	width: 1.2em;
-	text-align: center;
 	/* display: inline-block; */
 	/* font-weight: semibold; */
 	/* color: var(--ls-page-checkbox-color); */
+	margin-right: 10px;
+	/* content: counter(item); */
+	/* background: lightblue; */
+	/* border-radius: 100%; */
+	width: 1.2em;
+	text-align: center;
 	color: var(--ls-primary-background-color) !important;
 	background-color: var(--ls-page-checkbox-color);
 	font-size: 0.7em;
