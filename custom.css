@@ -1844,8 +1844,16 @@ div .open-block-ref-link {
 	text-decoration: none;
 }
 
-.block-ref:after {
-	display: inline-block;
+/* .block-ref:after {
+	display: inline;
+	content: "^";
+} */
+.block-ref .block-content {
+	display: inline !important;
+}
+
+.ls-block>.flex .flex-1 .inline .block-ref-wrap:first-of-type .block-ref .block-content .flex-1:after {
+	display: inline;
 	content: "^";
 	/* width: 21px; */
 	/* height: 16px; */
@@ -1855,6 +1863,9 @@ div .open-block-ref-link {
 }
 
 
+.block-ref .block-content {
+	display: inline !important;
+}
 
 
 
