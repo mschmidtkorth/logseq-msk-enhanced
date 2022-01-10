@@ -1899,6 +1899,21 @@ a.external-link:after {
 	border-left: 1px solid transparent;
 }
 
+.block-children [level="0"] {
+	border-left: 1px solid;
+	border-left-color: #c7b8b896;
+}
+
+.block-children [level="1"] {
+	border-left: 1px solid;
+	border-left-color: #c7b8b896;
+}
+
+.block-children [level="2"] {
+	border-left: 1px solid;
+	border-left-color: #c7b8b896;
+}
+
 .block-children [level="3"] {
 	border-left: 1px solid;
 	border-left-color: #ff00005c;
@@ -1937,6 +1952,15 @@ a.external-link:after {
 .ls-block {
 	margin: -2px 0px -2px -1px !important;
 	padding: 4px 1px !important;
+}
+
+/* Fix conflict with colorful indentation levels and new standard indicators */
+.block-children-container {
+	margin-left: 0em !important;
+}
+
+.block-children-left-border {
+	width: 0em !important;
 }
 
 /* === Highlight indentation line on hover === */
