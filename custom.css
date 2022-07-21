@@ -1574,6 +1574,16 @@ a.tag[data-ref*="cloth"]:after {
 }
 
 /* === Code === */
+code {
+	color: var(--orange);
+	background: var(--ls-tertiary-background-color)
+}
+
+.white-theme code {
+	color: rgb(245, 118, 83);
+	background: rgb(255, 241, 237);
+}
+
 :not(pre)>code,
 .CodeMirror pre.CodeMirror-line,
 .CodeMirror pre.CodeMirror-line-like {
