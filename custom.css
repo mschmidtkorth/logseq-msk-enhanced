@@ -375,13 +375,18 @@ html[data-theme=dark] {
 
 :root {
 	/* --ls-main-content-max-width: 100vw; /* Always wide width */
-	--ls-main-content-max-width: 800px !important;
+	--ls-main-content-max-width: 800px !important; /* Since 0.8.7 covered by ls-wide-mode */
 	/* TODO: Implement once PR has been approved */
 	/* --ls-main-content-max-width-wide: 80% !important; */
 	--ls-block-bullet-threading-width: 2px;
 	/* For threading extension */
 	--ls-block-bullet-active-color: var(--ls-block-bullet-color);
 	--ls-font-family: 'Basis Grotesque Pro';
+}
+
+main.ls-wide-mode {
+	max-width: 1480px !important;
+	margin: auto;
 }
 
 ::selection {
@@ -1575,13 +1580,16 @@ a.tag[data-ref*="cloth"]:after {
 
 /* === Code === */
 code {
-	color: var(--orange);
-	background: var(--ls-tertiary-background-color)
+	/* color: var(--orange);
+	background: var(--ls-tertiary-background-color) */
+	color: var(--ls-page-inline-code-color);
+	background-color: var(--ls-page-inline-code-bg-color, #eee)
 }
 
 .white-theme code {
-	color: rgb(245, 118, 83);
-	background: rgb(255, 241, 237);
+	color: var(--orange);
+	background-color: var(--ls-page-inline-code-bg-color, #eee)
+		/* background: rgb(255, 241, 237); */
 }
 
 :not(pre)>code,
@@ -1830,6 +1838,11 @@ div .open-block-ref-link {
 .blocks-properties .my-1 b {
 	font-weight: bold;
 	color: var(--text-accent)
+}
+
+/* Hover over proerty keys */
+.page-properties div a:hover {
+	background: transparent !important
 }
 
 /* === Block references == */
