@@ -384,7 +384,7 @@ html[data-theme=dark] {
 	--ls-font-family: 'Basis Grotesque Pro';
 }
 
-main.ls-wide-mode {
+main.ls-wide-mode #main-content-container {
 	max-width: 1480px !important;
 	margin: auto;
 }
