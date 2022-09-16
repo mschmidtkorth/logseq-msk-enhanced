@@ -384,9 +384,10 @@ html[data-theme=dark] {
 	--ls-font-family: 'Basis Grotesque Pro';
 }
 
-main.ls-wide-mode #main-content-container {
+main.ls-wide-mode #main-content-container div.relative {
 	max-width: 1480px !important;
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 ::selection {
