@@ -584,6 +584,28 @@ a svg {
 }
 
 /* Search modal */
+.ui__modal-panel .cp__cmdk__modal .border-b {
+	border: none;
+}
+.ui__modal-panel .cp__cmdk__modal .border-b:not(:first-child) {
+	margin-top: 1em;
+}
+.ui__modal-panel .cp__cmdk__modal .search-results {
+	background: var(--ls-tertiary-background-color) !important;
+	border-radius: var(--ls-border-radius-low);
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+/* Highlighted item */
+.light-theme .ui__modal-panel .cp__cmdk__modal .search-results .bg-gray-03-alpha {
+	background: var(--text-highlight-bg) !important;
+
+}
+.dark-theme .ui__modal-panel .cp__cmdk__modal .search-results .bg-gray-03-alpha {
+	background: var(--text-accent-light) !important;
+}
+
 /* Horizontal borders */
 .dark-theme .ui__modal-panel .cp__cmdk__modal div.border-b {
 	border-color: var(--ls-block-bullet-color-outer) !important;
