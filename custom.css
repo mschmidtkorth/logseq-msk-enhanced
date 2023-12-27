@@ -606,6 +606,15 @@ a svg {
 	background: var(--text-accent-light) !important;
 }
 
+/* Headings */
+.light-theme .ui__modal-panel .cp__cmdk__modal .font-bold {
+	font-size: 1.3em;
+}
+
+.dark-theme .ui__modal-panel .cp__cmdk__modal .font-bold {
+	font-size: 1.3em;
+}
+
 /* Horizontal borders */
 .dark-theme .ui__modal-panel .cp__cmdk__modal div.border-b {
 	border-color: var(--ls-block-bullet-color-outer) !important;
